@@ -1,0 +1,155 @@
+nav {
+    background-color: $bg-color;
+    border-bottom: 1px solid $border;
+    height: 5rem;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    animation: dropIn 2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    box-shadow: inset 0 -4px 4px 0 $shadow, 0 4px 4px $shadow;
+    z-index: 1;
+
+    .logo {
+        width: 5rem;
+        height: 100%;
+        grid-area: logo;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: $bold;
+        font-size: 2.6rem;
+    }
+
+    .navbar {
+        ul {
+            display: flex;
+            flex-direction: row;
+            list-style-type: none;
+            height: 100%;
+
+            li {
+                padding: 1em;
+                border-right: 1px solid $border;
+                height: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                animation: dropIn 2s;
+                opacity: 0;
+                animation-timing-function: ease-out;
+                animation-fill-mode: forwards;
+            }
+
+            .cv {
+                #dl {
+                    fill: $navlink-color;
+                }
+                animation-delay: 400ms;
+
+                a::after {
+                    content: "CV";
+                    color: $navlink-color;
+                }
+            }
+
+            .cv:hover {
+                #dl {
+                    fill: $hover;
+                }
+                a::after {
+                    color: $hover;
+                }
+            }
+
+            .contact {
+                animation-delay: 800ms;
+
+                .contact-wrapper {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    animation: shrinkContact 1s forwards;
+                }
+
+                .contact-wrapper:hover {
+                    animation: growContact 1s forwards;
+                    a::after {
+                        animation: change 1s forwards;
+                    }
+                }
+
+                a::after {
+                    content: "Contact";
+                    color: $navlink-color;
+                    animation: changeBack 1s forwards;
+                }
+            }
+
+            .contact:hover {
+                a::after {
+                    color: $hover;
+                }
+            }
+        }
+    }
+}
+
+@keyframes dropIn {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes growContact {
+    0% {
+        width: 5rem;
+    }
+    100% {
+        width: 17rem;
+    }
+}
+
+@keyframes shrinkContact {
+    0% {
+        width: 17rem;
+    }
+    100% {
+        width: 5rem;
+    }
+}
+
+@keyframes change {
+    0% {
+        content: "Contact";
+    }
+    30% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        content: "scott.h.collier@gmail.com";
+    }
+}
+
+@keyframes changeBack {
+    0% {
+        content: "scott.h.collier@gmail.com";
+    }
+    30% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        content: "Contact";
+    }
+}

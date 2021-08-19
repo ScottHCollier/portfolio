@@ -5,6 +5,7 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap");
 html {
   line-height: 1.15;
   /* 1 */
@@ -344,6 +345,15 @@ html {
   box-sizing: border-box;
 }
 
+body {
+  background-color: #191919;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
 /**
  * Make all elements from the DOM inherit from the parent box-sizing
  * Since `*` has a specificity of 0, it does not override the `html` value
@@ -360,19 +370,23 @@ html {
  * Basic styles for links
  */
 a {
-  color: #e50050;
+  color: #ccc;
   text-decoration: none;
 }
 a:hover, a:active, a:focus {
-  color: #222222;
+  color: #fff;
   text-decoration: underline;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
 }
 
 /**
  * Basic typography style for copy text
  */
 body {
-  color: #222222;
+  color: #fff;
   font: normal 125%/1.4 "Open Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
@@ -433,6 +447,467 @@ body {
   padding: 0;
   position: absolute;
   width: 1px;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+.nav-button:hover {
+  box-shadow: inset 0 -2px 0 0 white;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+nav {
+  background-color: #191919;
+  border-bottom: 1px solid #434343;
+  height: 5rem;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  animation: dropIn 2s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  box-shadow: inset 0 -4px 4px 0 #19191999, 0 4px 4px #19191999;
+  z-index: 1;
+}
+nav .logo {
+  width: 5rem;
+  height: 100%;
+  grid-area: logo;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 2.6rem;
+}
+nav .navbar ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  height: 100%;
+}
+nav .navbar ul li {
+  padding: 1em;
+  border-right: 1px solid #434343;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  animation: dropIn 2s;
+  opacity: 0;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+nav .navbar ul .cv {
+  animation-delay: 400ms;
+}
+nav .navbar ul .cv #dl {
+  fill: #aaa;
+}
+nav .navbar ul .cv a::after {
+  content: "CV";
+  color: #aaa;
+}
+nav .navbar ul .cv:hover #dl {
+  fill: #777;
+}
+nav .navbar ul .cv:hover a::after {
+  color: #777;
+}
+nav .navbar ul .contact {
+  animation-delay: 800ms;
+}
+nav .navbar ul .contact .contact-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: shrinkContact 1s forwards;
+}
+nav .navbar ul .contact .contact-wrapper:hover {
+  animation: growContact 1s forwards;
+}
+nav .navbar ul .contact .contact-wrapper:hover a::after {
+  animation: change 1s forwards;
+}
+nav .navbar ul .contact a::after {
+  content: "Contact";
+  color: #aaa;
+  animation: changeBack 1s forwards;
+}
+nav .navbar ul .contact:hover a::after {
+  color: #777;
+}
+
+@keyframes dropIn {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes growContact {
+  0% {
+    width: 5rem;
+  }
+  100% {
+    width: 17rem;
+  }
+}
+@keyframes shrinkContact {
+  0% {
+    width: 17rem;
+  }
+  100% {
+    width: 5rem;
+  }
+}
+@keyframes change {
+  0% {
+    content: "Contact";
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    content: "scott.h.collier@gmail.com";
+  }
+}
+@keyframes changeBack {
+  0% {
+    content: "scott.h.collier@gmail.com";
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    content: "Contact";
+  }
+}
+.sidenav {
+  border-right: 1px solid #434343;
+  height: 100%;
+  width: 5rem;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  animation: slideRight 2s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-delay: 400ms;
+  box-shadow: inset -4px 0 4px 0 #19191999, 4px 0 4px #19191999;
+  z-index: 2;
+}
+.sidenav ul {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  width: 100%;
+}
+.sidenav ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  border-top: 1px solid #434343;
+  animation: slideRight 2s;
+  opacity: 0;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-delay: 600ms;
+}
+.sidenav ul li:nth-of-type(2) {
+  animation-delay: 1200ms;
+}
+.sidenav ul #github-logo,
+.sidenav ul #li-logo {
+  fill: #fff;
+}
+.sidenav ul #li-logo {
+  width: 28px;
+  height: 28px;
+}
+.sidenav ul #github-logo:hover,
+.sidenav ul #li-logo:hover {
+  fill: #777;
+  cursor: pointer;
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.sidebar-icon {
+  transition: fill 200ms ease-in;
+}
+
+main {
+  background-color: #191919;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+
+.main {
+  height: 200vh;
+  display: grid;
+  grid-template-rows: 5rem auto;
+  grid-template-columns: 5rem auto;
+  grid-template-areas: "sidebar nav" "sidebar body";
+}
+.main .body-grid {
+  grid-area: body;
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+}
+.main .body-grid .header h2 {
+  animation: fadeIn 2s forwards;
+  animation-delay: 1200ms;
+  opacity: 0;
+  font-size: 5rem;
+  line-height: 1em;
+}
+.main .body-grid .header h2:nth-of-type(2) {
+  animation-delay: 1400ms;
+}
+.main .body-grid .header .header-underline {
+  width: 30em;
+  height: 2px;
+  background-color: white;
+  margin: 1em 0;
+  opacity: 0;
+  animation: dropIn 2s forwards;
+  animation-delay: 1800ms;
+}
+.main .body-grid .header .header-button {
+  padding: 0.5em 2em;
+  background-color: #191919;
+  color: #fff;
+  border: 2px solid white;
+  margin-bottom: 1em;
+  opacity: 0;
+  animation: dropIn 2s forwards;
+  animation-delay: 1600ms;
+}
+.main .body-grid .header .header-button:hover {
+  background-color: white;
+  color: #191919;
+  cursor: pointer;
+}
+.main .body-grid .main-body {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.main .body-grid .main-body .project-card {
+  width: 48%;
+  margin-bottom: 3em;
+  animation: fadeIn 2s forwards;
+  animation-delay: 2000ms;
+  opacity: 0;
+}
+.main .body-grid .main-body .project-card .preview {
+  border: 1px solid white;
+  margin-bottom: 1em;
+}
+.main .body-grid .main-body .project-card .preview .img-wrapper {
+  overflow: hidden;
+  border: 1px solid white;
+}
+.main .body-grid .main-body .project-card .preview .img-wrapper img {
+  transition: transform 500ms ease-in-out;
+  height: 20em;
+  width: 100%;
+}
+.main .body-grid .main-body .project-card .preview .img-wrapper img:hover {
+  transform: scale(120%);
+}
+.main .body-grid .main-body .project-card .preview .button-row {
+  display: flex;
+  flex-direction: row;
+}
+.main .body-grid .main-body .project-card .preview .button-row button,
+.main .body-grid .main-body .project-card .preview .button-row .card-button {
+  text-align: center;
+  width: 50%;
+  padding: 0.5em 2em;
+  background-color: #191919;
+  color: #fff;
+  border: 1px solid white;
+}
+.main .body-grid .main-body .project-card .preview .button-row button:hover,
+.main .body-grid .main-body .project-card .preview .button-row .card-button:hover {
+  background-color: white;
+  color: #191919;
+  cursor: pointer;
+}
+.main .body-grid .main-body .project-card .details {
+  display: flex;
+  flex-direction: row;
+  padding: 0 1em;
+}
+.main .body-grid .main-body .project-card .details .text h3 {
+  margin-bottom: 0.5em;
+}
+.main .body-grid .main-body .project-card .details .tech-stack {
+  width: 25em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.main .body-grid .footer-body {
+  margin-top: auto;
+  height: 10rem;
+  background-color: cornflowerblue;
+}
+
+@keyframes expand {
+  100% {
+    opacity: 1;
+    font-size: 5rem;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    transform: scale(80%);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(100%);
+    opacity: 1;
+  }
+}
+body::-webkit-scrollbar {
+  width: 1em;
+  background-color: #191919;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: white;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 1em;
+  /* outline: 1px solid slategrey; */
+}
+
+@media (max-width: 768px) {
+  .bg {
+    color: red;
+  }
+}
+@media (max-width: 480px) {
+  .bg {
+    color: chartreuse;
+  }
+
+  .sidenav {
+    display: none;
+  }
+
+  .main {
+    grid-template-rows: 5rem auto;
+    grid-template-columns: auto;
+    grid-template-areas: "nav" "body";
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

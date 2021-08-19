@@ -1,3 +1,23 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the button component.
 // -----------------------------------------------------------------------------
+.nav-button:hover {
+    box-shadow: inset 0 -2px 0 0 white;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+// a {
+//     color: $text-color;
+//     transition: color 200ms ease-in;
+// }
+
+// a:hover {
+//     color: $hover;
+// }
