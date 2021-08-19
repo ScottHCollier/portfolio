@@ -814,7 +814,7 @@ main .main .body-grid .header .header-underline {
   animation: dropIn 2s forwards;
   animation-delay: 1800ms;
 }
-main .main .body-grid .header .header-button {
+main .main .body-grid .header .about-button {
   padding: 0.5em 2em;
   background-color: #191919;
   color: #fff;
@@ -824,10 +824,28 @@ main .main .body-grid .header .header-button {
   animation: dropIn 2s forwards;
   animation-delay: 1600ms;
 }
-main .main .body-grid .header .header-button:hover {
+main .main .body-grid .header .about-button:hover {
   background-color: white;
   color: #191919;
   cursor: pointer;
+}
+main .main .body-grid .header .about-text {
+  overflow: hidden;
+  height: 0;
+  transition: height 2s;
+  margin-bottom: 0.5em;
+}
+main .main .body-grid .header .about-text p {
+  font-size: 2.4rem;
+  transform: translateY(-100%);
+  transition: transform 2s;
+  margin-bottom: 1em;
+}
+main .main .body-grid .header .about-text-open {
+  height: 20em;
+}
+main .main .body-grid .header .about-text-open p {
+  transform: translateY(0);
 }
 main .main .body-grid .main-body {
   height: 100%;
@@ -958,6 +976,9 @@ nav .navbar ul .cv a::after {
   main .main .body-grid .header .header-underline {
     width: 16em;
   }
+  main .main .body-grid .header .about-text p {
+    font-size: 1.7rem;
+  }
   main .main .body-grid .main-body {
     align-items: center;
   }
@@ -1027,6 +1048,14 @@ nav .navbar ul .cv a::after {
   }
   main .main .body-grid .header .header-underline {
     width: 16em;
+  }
+  main .main .body-grid .header .about-button {
+    margin-left: 0.4em;
+  }
+  main .main .body-grid .header .about-text p {
+    font-size: 1.25rem;
+    margin: 0 0.4em;
+    margin-bottom: 1em;
   }
   main .main .body-grid .main-body {
     flex-direction: column;

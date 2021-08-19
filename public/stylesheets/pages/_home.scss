@@ -43,7 +43,7 @@ main {
                     animation-delay: 1800ms;
                 }
 
-                .header-button {
+                .about-button {
                     padding: 0.5em 2em;
                     background-color: $bg-color;
                     color: $text-color;
@@ -57,6 +57,28 @@ main {
                         background-color: white;
                         color: $bg-color;
                         cursor: pointer;
+                    }
+                }
+
+                .about-text {
+                    overflow: hidden;
+                    height: 0;
+                    transition: height 2s;
+                    margin-bottom: 0.5em;
+
+                    p {
+                        font-size: 2.4rem;
+                        transform: translateY(-100%);
+                        transition: transform 2s;
+                        margin-bottom: 1em;
+                    }
+                }
+
+                .about-text-open {
+                    height: 20em;
+
+                    p {
+                        transform: translateY(0);
                     }
                 }
             }
@@ -235,6 +257,12 @@ body::-webkit-scrollbar-thumb {
                     .header-underline {
                         width: 16em;
                     }
+
+                    .about-text {
+                        p {
+                            font-size: 1.7rem;
+                        }
+                    }
                 }
 
                 .main-body {
@@ -339,6 +367,18 @@ body::-webkit-scrollbar-thumb {
 
                     .header-underline {
                         width: 16em;
+                    }
+
+                    .about-button {
+                        margin-left: 0.4em;
+                    }
+
+                    .about-text {
+                        p {
+                            font-size: 1.25rem;
+                            margin: 0 0.4em;
+                            margin-bottom: 1em;
+                        }
                     }
                 }
 
