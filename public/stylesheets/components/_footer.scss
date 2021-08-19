@@ -1,0 +1,47 @@
+.footer {
+    border-top: 1px solid $border;
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        list-style-type: none;
+        width: 100%;
+
+        li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1em;
+            
+            .footer-border {
+                width: 1px;
+                height: 150%;
+                background-color: $border;
+            }
+        }
+
+        #github-logo,
+        #li-logo {
+            fill: $text-color;
+        }
+
+        #li-logo {
+            width: 28px;
+            height: 28px;
+        }
+
+        #github-logo:hover,
+        #li-logo:hover {
+            fill: $hover;
+            cursor: pointer;
+        }
+    }
+}

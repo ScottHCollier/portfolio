@@ -47,6 +47,7 @@ nav {
             .cv {
                 #dl {
                     fill: $navlink-color;
+                    transform: translateY(1px);
                 }
                 animation-delay: 400ms;
 

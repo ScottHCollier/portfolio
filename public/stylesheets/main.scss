@@ -14,8 +14,8 @@
 @import "layout/header", "layout/footer", "layout/main";
 
 // 5. Components
-@import "components/button", "components/navbar", "components/sidebar",
-    "components/icons";
+@import "components/button", "components/navbar", "components/sidenav",
+    "components/icons", "components/footer";
 
 // 6. Page-specific styles
 @import "pages/home";

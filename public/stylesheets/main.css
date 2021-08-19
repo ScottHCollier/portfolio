@@ -583,6 +583,7 @@ nav .navbar ul .cv {
 }
 nav .navbar ul .cv #dl {
   fill: #aaa;
+  transform: translateY(1px);
 }
 nav .navbar ul .cv a::after {
   content: "CV";
@@ -733,37 +734,78 @@ nav .navbar ul .contact:hover a::after {
   transition: fill 200ms ease-in;
 }
 
+.footer {
+  border-top: 1px solid #434343;
+  height: 5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+.footer ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  list-style-type: none;
+  width: 100%;
+}
+.footer ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+}
+.footer ul li .footer-border {
+  width: 1px;
+  height: 150%;
+  background-color: #434343;
+}
+.footer ul #github-logo,
+.footer ul #li-logo {
+  fill: #fff;
+}
+.footer ul #li-logo {
+  width: 28px;
+  height: 28px;
+}
+.footer ul #github-logo:hover,
+.footer ul #li-logo:hover {
+  fill: #777;
+  cursor: pointer;
+}
+
 main {
   background-color: #191919;
   display: flex;
   flex-direction: column;
   color: #fff;
 }
-
-.main {
+main .main {
   height: 200vh;
   display: grid;
   grid-template-rows: 5rem auto;
   grid-template-columns: 5rem auto;
   grid-template-areas: "sidebar nav" "sidebar body";
 }
-.main .body-grid {
+main .main .body-grid {
   grid-area: body;
   display: flex;
   flex-direction: column;
   padding: 2em;
 }
-.main .body-grid .header h2 {
+main .main .body-grid .header h2 {
   animation: fadeIn 2s forwards;
   animation-delay: 1200ms;
   opacity: 0;
   font-size: 5rem;
   line-height: 1em;
 }
-.main .body-grid .header h2:nth-of-type(2) {
+main .main .body-grid .header h2:nth-of-type(2) {
   animation-delay: 1400ms;
 }
-.main .body-grid .header .header-underline {
+main .main .body-grid .header .header-underline {
   width: 30em;
   height: 2px;
   background-color: white;
@@ -772,7 +814,7 @@ main {
   animation: dropIn 2s forwards;
   animation-delay: 1800ms;
 }
-.main .body-grid .header .header-button {
+main .main .body-grid .header .header-button {
   padding: 0.5em 2em;
   background-color: #191919;
   color: #fff;
@@ -782,47 +824,47 @@ main {
   animation: dropIn 2s forwards;
   animation-delay: 1600ms;
 }
-.main .body-grid .header .header-button:hover {
+main .main .body-grid .header .header-button:hover {
   background-color: white;
   color: #191919;
   cursor: pointer;
 }
-.main .body-grid .main-body {
+main .main .body-grid .main-body {
   height: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.main .body-grid .main-body .project-card {
+main .main .body-grid .main-body .project-card {
   width: 48%;
   margin-bottom: 3em;
   animation: fadeIn 2s forwards;
   animation-delay: 2000ms;
   opacity: 0;
 }
-.main .body-grid .main-body .project-card .preview {
+main .main .body-grid .main-body .project-card .preview {
   border: 1px solid white;
   margin-bottom: 1em;
 }
-.main .body-grid .main-body .project-card .preview .img-wrapper {
+main .main .body-grid .main-body .project-card .preview .img-wrapper {
   overflow: hidden;
   border: 1px solid white;
 }
-.main .body-grid .main-body .project-card .preview .img-wrapper img {
+main .main .body-grid .main-body .project-card .preview .img-wrapper img {
   transition: transform 500ms ease-in-out;
   height: 20em;
   width: 100%;
 }
-.main .body-grid .main-body .project-card .preview .img-wrapper img:hover {
+main .main .body-grid .main-body .project-card .preview .img-wrapper img:hover {
   transform: scale(120%);
 }
-.main .body-grid .main-body .project-card .preview .button-row {
+main .main .body-grid .main-body .project-card .preview .button-row {
   display: flex;
   flex-direction: row;
 }
-.main .body-grid .main-body .project-card .preview .button-row button,
-.main .body-grid .main-body .project-card .preview .button-row .card-button {
+main .main .body-grid .main-body .project-card .preview .button-row button,
+main .main .body-grid .main-body .project-card .preview .button-row .card-button {
   text-align: center;
   width: 50%;
   padding: 0.5em 2em;
@@ -830,31 +872,29 @@ main {
   color: #fff;
   border: 1px solid white;
 }
-.main .body-grid .main-body .project-card .preview .button-row button:hover,
-.main .body-grid .main-body .project-card .preview .button-row .card-button:hover {
+main .main .body-grid .main-body .project-card .preview .button-row button:hover,
+main .main .body-grid .main-body .project-card .preview .button-row .card-button:hover {
   background-color: white;
   color: #191919;
   cursor: pointer;
 }
-.main .body-grid .main-body .project-card .details {
+main .main .body-grid .main-body .project-card .details {
   display: flex;
   flex-direction: row;
   padding: 0 1em;
 }
-.main .body-grid .main-body .project-card .details .text h3 {
+main .main .body-grid .main-body .project-card .details .text h3 {
   margin-bottom: 0.5em;
 }
-.main .body-grid .main-body .project-card .details .tech-stack {
+main .main .body-grid .main-body .project-card .details .tech-stack {
   width: 25em;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
 }
-.main .body-grid .footer-body {
-  margin-top: auto;
-  height: 10rem;
-  background-color: cornflowerblue;
+main .main .body-grid .footer {
+  display: none;
 }
 
 @keyframes expand {
@@ -889,24 +929,145 @@ body::-webkit-scrollbar-thumb {
   /* outline: 1px solid slategrey; */
 }
 
-@media (max-width: 768px) {
-  .bg {
-    color: red;
+@media (max-width: 860px) {
+  nav .logo {
+    font-size: 1.5rem;
+    border-right: 1px solid #434343;
   }
-}
-@media (max-width: 480px) {
-  .bg {
-    color: chartreuse;
+  nav .navbar ul .contact a::after,
+nav .navbar ul .cv a::after {
+    font-size: 1rem;
+  }
+  nav .navbar ul .cv #dl {
+    transform: translateY(2px);
+  }
+
+  main .main {
+    width: 100%;
+    grid-template-rows: 5rem auto 5rem;
+    grid-template-columns: auto;
+    grid-template-areas: "nav" "body" "footer";
+  }
+  main .main .body-grid {
+    padding: 1em;
+    padding-bottom: 0;
+  }
+  main .main .body-grid .header h2 {
+    font-size: 3rem;
+  }
+  main .main .body-grid .header .header-underline {
+    width: 16em;
+  }
+  main .main .body-grid .main-body {
+    align-items: center;
+  }
+  main .main .body-grid .main-body .project-card {
+    width: 19em;
+  }
+  main .main .body-grid .main-body .project-card .preview .img-wrapper img {
+    height: 10em;
+  }
+  main .main .body-grid .main-body .project-card .details .text h3 {
+    font-size: 1.5rem;
+  }
+  main .main .body-grid .main-body .project-card .details .text p {
+    font-size: 1rem;
+  }
+  main .main .body-grid .footer {
+    display: flex;
+    grid-area: footer;
   }
 
   .sidenav {
     display: none;
   }
 
-  .main {
-    grid-template-rows: 5rem auto;
+  @keyframes growContact {
+    0% {
+      width: 5rem;
+    }
+    100% {
+      width: 14rem;
+    }
+  }
+  @keyframes shrinkContact {
+    0% {
+      width: 14rem;
+    }
+    100% {
+      width: 5rem;
+    }
+  }
+}
+@media (max-width: 480px) {
+  nav .logo {
+    font-size: 1.5rem;
+    border-right: 1px solid #434343;
+  }
+  nav .navbar ul .contact a::after,
+nav .navbar ul .cv a::after {
+    font-size: 1rem;
+  }
+  nav .navbar ul .cv #dl {
+    transform: translateY(2px);
+  }
+
+  main .main {
+    width: 100%;
+    grid-template-rows: 5rem auto 5rem;
     grid-template-columns: auto;
-    grid-template-areas: "nav" "body";
+    grid-template-areas: "nav" "body" "footer";
+  }
+  main .main .body-grid {
+    padding: 1em;
+    padding-bottom: 0;
+  }
+  main .main .body-grid .header h2 {
+    font-size: 3rem;
+  }
+  main .main .body-grid .header .header-underline {
+    width: 16em;
+  }
+  main .main .body-grid .main-body {
+    flex-direction: column;
+    align-items: center;
+  }
+  main .main .body-grid .main-body .project-card {
+    width: 20em;
+  }
+  main .main .body-grid .main-body .project-card .preview .img-wrapper img {
+    height: 10em;
+  }
+  main .main .body-grid .main-body .project-card .details .text h3 {
+    font-size: 1.5rem;
+  }
+  main .main .body-grid .main-body .project-card .details .text p {
+    font-size: 1rem;
+  }
+  main .main .body-grid .footer {
+    display: flex;
+    grid-area: footer;
+  }
+
+  .sidenav {
+    display: none;
+  }
+
+  @keyframes growContact {
+    0% {
+      width: 5rem;
+    }
+    100% {
+      width: 14rem;
+    }
+  }
+  @keyframes shrinkContact {
+    0% {
+      width: 14rem;
+    }
+    100% {
+      width: 5rem;
+    }
   }
 }
 
