@@ -1240,9 +1240,9 @@ nav .navbar ul .cv a::after {
     font-size: 1.7rem;
   }
   main .main .body-grid .main-body {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
   main .main .body-grid .main-body .project-card {
     width: 19em;
