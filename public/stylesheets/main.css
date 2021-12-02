@@ -1321,7 +1321,6 @@ nav .navbar ul .cv a::after {
   }
 
   main .main {
-    width: 100%;
     -ms-grid-rows: 5rem auto 5rem;
     grid-template-rows: 5rem auto 5rem;
     -ms-grid-columns: auto;
@@ -1329,6 +1328,10 @@ nav .navbar ul .cv a::after {
         grid-template-areas: "nav" "body" "footer";
   }
   main .main .body-grid {
+    padding: 0;
+    padding-bottom: 0;
+  }
+  main .main .body-grid .header {
     padding: 1em;
     padding-bottom: 0;
   }
@@ -1354,9 +1357,6 @@ nav .navbar ul .cv a::after {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-  }
-  main .main .body-grid .main-body .project-card {
-    width: 20em;
   }
   main .main .body-grid .main-body .project-card .preview .img-wrapper img {
     height: 10em;

@@ -351,16 +351,18 @@ body::-webkit-scrollbar-thumb {
 
     main {
         .main {
-            width: 100%;
+            
             grid-template-rows: 5rem auto 5rem;
             grid-template-columns: auto;
             grid-template-areas: "nav" "body" "footer";
 
             .body-grid {
-                padding: 1em;
+                padding: 0;
                 padding-bottom: 0;
 
                 .header {
+                    padding: 1em;
+                    padding-bottom: 0;
                     h2 {
                         font-size: 3rem;
                     }
@@ -387,9 +389,7 @@ body::-webkit-scrollbar-thumb {
                     align-items: center;
 
                     .project-card {
-                        width: 20em;
-
-                        .preview {
+                       .preview {
                             .img-wrapper {
                                 img {
                                     height: 10em;
