@@ -1187,7 +1187,7 @@ main .main .body-grid .footer {
   }
 }
 body::-webkit-scrollbar {
-  width: 1em;
+  width: 3px;
   background-color: #191919;
 }
 

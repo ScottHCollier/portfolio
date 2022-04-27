@@ -189,7 +189,7 @@ main {
 }
 
 body::-webkit-scrollbar {
-    width: 1em;
+    width: 3px;
     background-color: $bg-color;
 }
 
@@ -351,7 +351,6 @@ body::-webkit-scrollbar-thumb {
 
     main {
         .main {
-            
             grid-template-rows: 5rem auto 5rem;
             grid-template-columns: auto;
             grid-template-areas: "nav" "body" "footer";
@@ -389,7 +388,7 @@ body::-webkit-scrollbar-thumb {
                     align-items: center;
 
                     .project-card {
-                       .preview {
+                        .preview {
                             .img-wrapper {
                                 img {
                                     height: 10em;
